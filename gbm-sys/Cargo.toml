@@ -1,0 +1,18 @@
+[package]
+name = "gbm-sys"
+description = "Bindings to the Generic Buffer Management API"
+version = "0.0.0"
+authors = ["Tyler Slabinski <tslabinski@slabity.net>"]
+license = "MIT"
+build = "build.rs"
+
+[dependencies]
+libc = { version = "*", default-features = false }
+
+[features]
+default = []
+use_bindgen = ["bindgen", "pkg-config"]
+
+[build-dependencies]
+bindgen = { version = "*", optional = true }
+pkg-config = { version = "*", optional = true }
